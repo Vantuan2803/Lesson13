@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries</title>
+    <link rel="stylesheet" href="../css/industries.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    list-style: none;
+  }
+  html,
+  body {
+    font-family: "tahoma";
+    font-size: 16px;
+  }
+  .container {
+    margin: 1rem auto;
+    width: 1444px;
+    /* border: 1px solid red; */
+  }
+  /* header */
+  header .logo {
+    width: 158px;
+    padding: 1rem 0;
+  }
+  .logo img {
+    width: 100%;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lang {
+    width: 110px;
+    text-align: right;
+  }
+  nav {
+    width: calc(100% - 268px);
+  }
+  header nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  header a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  nav a {
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* footer  */
+  footer .logo {
+    width: 90px;
+  }
+  .row-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer nav ul {
+    display: flex;
+  }
+  footer a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  /* industries */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5.75rem 0;
+    gap: 4rem;
+  }
+  .col {
+    width: 50%;
+  }
+  .row:nth-child(2n) {
+    flex-flow: row-reverse;
+  }
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #281d52;
+    margin-top: 1rem;
+  }
+  p {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 0;
+  }
+  h3::before {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 0.5rem;
+    background-color: #281d52;
+    top: 0;
+  }
+  .row:nth-child(2n + 1) .content {
+    text-align: right;
+    /* padding-right: 3rem; */
+  }
+  .row:nth-child(2n + 1) .content h3::before {
+    right: 0;
+  }
+  .row:first-child .content {
+    text-align: left;
+  }
+  .row:first-child p {
+    border-left: 5px solid #281d52;
+    line-height: 1.5;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    margin: 3rem 0;
+  }
+  h2 {
+    font-size: 2.25rem;
+    color: #281d52;
+    padding: 1rem 0;
+  }
+  .content a {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background-color: #281d52;
+    color: #fff;
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .img {
+    width: 100%;
+  }
+  .img img {
+    width: 100%;
+  }
+  
+  /* responsive */
+  @media (max-width: 575.98px) {
+    html,
+    body {
+      font-size: 12px;
+    }
+    .container {
+      margin: 1rem;
+      width: calc(100% - 2rem);
+    }
+    .row {
+      padding:  1rem;
+      margin: 0;
+      flex-wrap: wrap !important;
+    }
+  
+    .col {
+      width: 100%;
+    }
+    .head {
+      padding: 1rem;
+    }
+  
+    .menu-icon {
+      width: 30px;
+      height: 30px;
+    }
+    .menu-icon > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 100%;
+    }
+    .menu-icon span {
+      width: 100%;
+      height: 5px;
+      background-color: #281d52;
+    }
+  
+    header .logo {
+      width: 75px;
+      padding: 1rem 0;
+    }
+    header nav {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: end;
+      flex-direction: column;
+      padding-right: 1rem;
+      position: relative;
+    }
+    header nav ul {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      top: 2.5rem;
+      background-color: #ccc;
+      width: 100%;
+    }
+    header nav ul li{
+      border-bottom: 1px solid #ddd;
+      line-height: 30px;
+    }
+    .lang {
+      width: 50px;
+    }
+    .lang a {
+      font-size: 1rem;
+    }
+    .menu-icon > div {
+      position: relative;
+    }
+  
+    .menu-icon:hover span:nth-child(2) {
+      display: none;
+    }
+    .menu-icon:hover span:nth-child(1) {
+      transform: rotate(45deg);
+      position: absolute;
+    }
+    .menu-icon:hover span:nth-child(3) {
+      transform: rotate(-45deg);
+      position: absolute;
+    }
+    .menu-icon:hover ~ ul {
+      display: block !important;
+      /* position: absolute; */
+    }
+    .row-footer .logo {
+      order: 1;
+      width: 5rem;
+      padding: 1rem;
+    }
+    .row-footer nav {
+      order: 3;
+      width: 100%;
+    }
+    .row-footer .social {
+      order: 2;
+      width: calc(100% - 7rem);
+    }
+    .row-footer {
+      flex-wrap: wrap;
+    }
+    .row-footer nav ul {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+<body>
+    <header>
+        <div class="container">
+          <div class="head">
+            <div class="logo">
+                <img src="../images/logo.png" alt="TVM">
+            </div>
+            <nav>
+                <div class="menu-icon">
+                    <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="" title="WHY CHOOSE US">WHY CHOOSE US</a></li>
+                    <li><a href="" title="INDUSTRIES">INDUSTRIES</a></li>
+                    <li><a href="" title="WORKS">WORKS</a></li>
+                    <li><a href="" title="OUR TEAM">OUR TEAM</a></li>
+                    <li><a href="" title="CONTACT">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <a href="">ENG/VN</a>
+            </div>
+          </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h1>Industries</h1>
+                        <p>
+                            Unlock new value, build trust and bring transparency across industries and businesses with the power of Blockchain.
+                        </p>
+                        <a href="">Contact Us</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-1.png" alt="Industries-1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Consumer electronics</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-2.png" alt="Industries-2">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Fintech</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-3.png" alt="Industries-3">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Healthcare</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-4.png" alt="Industries-4">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Insurance</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-5.png" alt="Industries-5">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Logistics</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-6.png" alt="Industries-6">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Manufacturing</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-7.png" alt="Industries-7">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Travel</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-8.png" alt="Industries-8">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- phần nội dung text  -->
+                <div class="col">
+                    <div class="content">
+                        <h3>our industries</h3>
+                        <h2>Startup</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam doloribus, ab sapiente nobis consectetur ipsam debitis inventore esse veritatis animi quaerat minima officiis architecto repudiandae ducimus id! Illum, rerum!
+                        </p>
+                        <a href="">LEARN MORE</a>
+                    </div>
+                </div>
+                <!-- Phần hình ảnh  -->
+                <div class="col">
+                    <div class="img">
+                        <img src="../images/Industries/Industries-9.png" alt="Industries-9">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row-footer">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="TVM">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="" title="WHY CHOOSE US">WHY CHOOSE US</a></li>
+                        <li><a href="" title="INDUSTRIES">INDUSTRIES</a></li>
+                        <li><a href="" title="WORKS">WORKS</a></li>
+                        <li><a href="" title="OUR TEAM">OUR TEAM</a></li>
+                        <li><a href="" title="CONTACT">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="social">
+                    <a href="tel: 01234XXXXX" title="01234XXXXX"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
